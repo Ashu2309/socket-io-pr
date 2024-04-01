@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"
+        integrity="sha512-luMnTJZ7oEchNDZAtQhgjomP1eZefnl82ruTH/3Oj/Yu5qYtwL7+dVRccACS/Snp1lFXq188XFipHKYE75IaQQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    Hello from Client Side
+    <script>
+        const socket = io();
+        // socket.on("message", (data) => {
+        //     document.write(data)
+        // })
+
+        //catch custom event
+        // socket.on("myCustomEvent", (data) => {
+        //     document.write(data.description)
+        // })
+
+        //send custom event
+        socket.emit('customClientEvent', { description: "Message from client side" })
+    </script>
+</body>
+
+</html>
